@@ -12,8 +12,8 @@
 #define ___ &trans
 
 #define BASE 0  // layer shortcuts, must match order in which they are defined below
-#define NAV 1
-#define SYM 2
+#define SYM 1
+#define NAV 2
 
 /* Global settings */
 
