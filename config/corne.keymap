@@ -12,8 +12,8 @@
 #define ___ &trans
 
 #define BASE 0  // layer shortcuts, must match order in which they are defined below
-#define SYM 1
-#define NAV 2
+#define NAV 1
+#define SYM 2
 
 /* custom behaviors */
 
@@ -33,7 +33,7 @@ ZMK_BEHAVIOR(ss_cw, tap_dance,
 
 // tap: backspace | shift + tap: delete | hold: num layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <&lt NUM BSPC>, <&kp DEL>;
+    bindings = <&lt SYM BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
