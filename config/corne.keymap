@@ -114,50 +114,43 @@ ZMK_BEHAVIOR(bs_del, mod_morph,
 
 /* keymap */
 
-ZMK_LAYER(default_layer,
+ZMK_LAYER(base,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
- XXX      &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp SQT       XXX
+ XXX      &kp Q         &kp W         &kp F         &kp P         &kp B        XXX  &kp J         &kp L         &kp U         &kp Y         &kp SQT       XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- XXX      &hrm LGUI A   &hrm LALT R   &hrm LCTRL S  &hrm LSHFT T  &kp G             &kp M         &hrm RSHFT N  &hrm LCTRL E  &hrm LALT I   &hrm LGUI O   XXX
+ XXX      &hrm LGUI A   &hrm LALT R   &hrm LCTRL S  &hrm LSHFT T  &kp G        XXX  &kp M         &hrm RSHFT N  &hrm LCTRL E  &hrm LALT I   &hrm LGUI O   XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- XXX      &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SEMI      XXX
+ XXX      &kp Z         &kp X         &kp C         &kp D         &kp V        XXX  &kp K         &kp H         &kp COMMA     &kp DOT       &kp SEMI      XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                      &kp ESC       &lt NAV SPACE &kp TAB           &kp RET      &lt SYM bs_del &smart_shft
+                                      &kp ESC       &lt NAV SPACE &kp TAB      XXX  &kp RET      &lt SYM bs_del &smart_shft
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_LAYER(sym_layer,
+ZMK_LAYER(sym,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
- XXX      &kp FSLH      &kp LT        &kp GT        &kp DQT       &kp APOS          &kp AMPS      ___           &kp LBKT      &kp RBKT      &kp PRCNT     XXX
+ XXX      &kp FSLH      &kp LT        &kp GT        &kp DQT       &kp APOS     XXX  &kp AMPS      ___           &kp LBKT      &kp RBKT      &kp PRCNT     XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX &hrm LGUI EXCL &hrm LALT MINUS &hrm LCTRL PLUS &hrm LSHFT EQUAL &kp HASH          &kp PIPE &hrm RSHFT COLON &hrm RCTRL LPAR &hrm RALT RPAR &hrm RGUI QMARK  XXX
+XXX &hrm LGUI EXCL &hrm LALT MINUS &hrm LCTRL PLUS &hrm LSHFT EQUAL &kp HASH   XXX  &kp PIPE &hrm RSHFT COLON &hrm RCTRL LPAR &hrm RALT RPAR &hrm RGUI QMARK  XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- XXX      &kp CARET     &kp FSLH      &kp STAR      &kp BSLH      ___               &kp TILDE     &kp DLLR      &kp LBRC      &kp RBRC      &kp AT        XXX
+ XXX      &kp CARET     &kp FSLH      &kp STAR      &kp BSLH      ___          XXX  &kp TILDE     &kp DLLR      &kp LBRC      &kp RBRC      &kp AT        XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                      ___           ___           ___               ___           ___           ___
+                                      ___           ___           ___          XXX  ___           ___           ___
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_LAYER(nav_layer,
+ZMK_LAYER(nav,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
- XXX      ___           &kp N7        &kp N8        &kp N9        ___               &kp PG_UP     &kp HOME      &kp UP        &kp END       &kp INS       XXX
+ XXX      ___           &kp N7        &kp N8        &kp N9        ___          XXX &kp PG_UP     &kp HOME      &kp UP        &kp END       &kp INS       XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- XXX      ___           &hrm LALT N4  &hrm LCTRL N5 &hrm LSHFT N6 &kp N0            &kp LEFT  &hrm RSHFT DOWN &hrm RCTRL UP &hrm RALT RIGHT &hrm RGUI DEL XXX
+ XXX      ___           &hrm LALT N4  &hrm LCTRL N5 &hrm LSHFT N6 &kp N0       XXX &kp LEFT  &hrm RSHFT DOWN &hrm RCTRL UP &hrm RALT RIGHT &hrm RGUI DEL XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- XXX      ___           &kp N1        &kp N2        &kp N3        ___               ___           &kp LC(X)     &kp LC(INS)   &kp LS(INS)   ___           XXX
+ XXX      ___           &kp N1        &kp N2        &kp N3        ___          XXX ___           &kp LC(X)     &kp LC(INS)   &kp LS(INS)   ___           XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                      ___           ___           ___               ___           ___           ___
+                                      ___           ___           ___          XXX ___           ___           ___
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_LAYER(norwegian_layer,
-     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
- XXX      ___           ___           ___           ___           ___               ___           ___           ___           ___           ___           XXX
-     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- XXX      ___           ___           ___           ___           ___               ___           ___           ___           ___           ___           XXX
-     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- XXX      ___           ___           ___           ___           ___               ___           ___           ___           ___           ___           XXX
-     // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                      ___           ___           ___               ___           ___           ___
-     //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-)
+/* use 5-column layout for Zen */
+/ { chosen { zmk,matrix_transform = &five_column_transform; }; };
+
+/* vim: set ft=c tw=174: */
