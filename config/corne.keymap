@@ -73,17 +73,17 @@ ZMK_BEHAVIOR(bs_del, mod_morph,
 )
 
 // reuse basic mod-morph scheme
-#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
-    ZMK_BEHAVIOR(NAME, mod_morph, \
-        mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
-        bindings = <BINDING1>, <BINDING2>; \
-    )
-
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
-
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
-SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+// #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
+//     ZMK_BEHAVIOR(NAME, mod_morph, \
+//         mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
+//         bindings = <BINDING1>, <BINDING2>; \
+//     )
+//
+// SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+// SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+//
+// SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
+// SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
 /* keymap */
 
