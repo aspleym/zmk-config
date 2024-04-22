@@ -89,7 +89,7 @@ ZMK_BEHAVIOR(bs_del, mod_morph,
 
 ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-  XXX        &bt BT_CLR_ALL &bt BT_NXT   &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp SQT  XXX
+  XXX        &kp Q         &kp W        &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp SQT  XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
   XXX        &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T  &kp G             &kp M         &hmr RSHFT N  &hmr LCTRL E  &hmr LALT I   &hmr LGUI O XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
