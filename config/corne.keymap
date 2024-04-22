@@ -101,11 +101,11 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp FSLH      &kp LT        &kp GT        &kp DQT       &kp APOS          &kp AMPS      ___           &kp LBKT      &kp RBKT      &kp PRCNT
+ XXX      &kp FSLH      &kp LT        &kp GT        &kp DQT       &kp APOS          &kp AMPS      ___           &kp LBKT      &kp RBKT      &kp PRCNT  XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &hml LGUI EXCL &hml LALT MINUS &hml LCTRL PLUS &hml LSHFT EQUAL &kp HASH  &kp PIPE &hmr RSHFT COLON &hmr RCTRL LPAR &hmr RALT RPAR &hmr RGUI QMARK
+ XXX      &hml LGUI EXCL &hml LALT MINUS &hml LCTRL PLUS &hml LSHFT EQUAL &kp HASH  &kp PIPE &hmr RSHFT COLON &hmr RCTRL LPAR &hmr RALT RPAR &hmr RGUI QMARK  XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &kp CARET     &kp FSLH      &kp STAR      &kp BSLH      ___               &kp TILDE     &kp DLLR      &kp LBRC      &kp RBRC      &kp AT
+ XXX      &kp CARET     &kp FSLH      &kp STAR      &kp BSLH      ___               &kp TILDE     &kp DLLR      &kp LBRC      &kp RBRC      &kp AT        XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                       ___           ___           ___               ___           ___           ___
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -113,14 +113,14 @@ ZMK_LAYER(sym_layer,
 
 ZMK_LAYER(nav_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          ___           &kp N7        &kp N8        &kp N9        ___               ___           ___           ___           ___           ___
+ XXX      ___           &kp N7        &kp N8        &kp N9        ___               ___           ___           ___           ___           ___           XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          ___           &hml LALT N4  &hml LCTRL N5 &hml LSHFT N6 &kp N0            &kp LEFT  &hmr RSHFT DOWN &hmr RCTRL UP &hmr RALT RIGHT &hmr RGUI DEL
+ XXX      ___           &hml LALT N4  &hml LCTRL N5 &hml LSHFT N6 &kp N0            &kp LEFT  &hmr RSHFT DOWN &hmr RCTRL UP &hmr RALT RIGHT &hmr RGUI DEL XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          ___           &kp N1        &kp N2        &kp N3        ___               ___           ___           ___           ___           ___
+ XXX      ___           &kp N1        &kp N2        &kp N3        ___               ___           ___           ___           ___           ___           XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                       ___           ___           ___               ___           ___           ___
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-/* vim: set ft=c tw=174: */
+/* vim: set ft=c tw=174: LEFT*/
