@@ -1,14 +1,33 @@
 /* source key position labels */
+
 #include "zmk-helpers/key-labels/36.h"
 
 /* map Zen's extra keys */
 //#define X_LH  &kp LGUI      // thumb row, left
 //#define X_RH  &smart_mouse  // thumb row, right
-
 /* source the main keymap */
+
 #include "base.keymap"
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 
 /* use 5-column layout for Zen */
-/ { chosen { zmk,matrix_transform = &five_column_transform; }; };
+
+/ {
+    chosen { zmk,matrix_transform = &five_column_transform; };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        layer_0 {
+            bindings = <
+  &kp Q  &kp W  &kp F    &kp P      &kp B        &kp J      &kp L     &kp U      &kp Y    &kp SEMI
+  &kp A  &kp R  &kp S    &kp T      &kp G        &kp M      &kp N     &kp E      &kp I    &kp O
+  &kp Z  &kp X  &kp C    &kp D      &kp V        &kp K      &kp H     &kp COMMA  &kp DOT  &kp FSLH
+                &kp ESC  &kp SPACE  &kp ENTER    &kp RSHFT  &kp BSPC  &kp RSHFT
+            >;
+        };
+    };
+};
 
 /* vim: set ft=c tw=174: */
