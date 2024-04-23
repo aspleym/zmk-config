@@ -159,8 +159,8 @@ SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 // tap: '' | shift + tap: "" | ctrl + shift + tap: ``
-SIMPLE_MORPH(quote_morph, SFT, &kp APOS, &q_q)
-SIMPLE_MORPH(q_q, CTL, &kp QUOTE, &kp GRAVE)
+SIMPLE_MORPH(quote_morph, SFT, &kp SQT, &q_q)
+SIMPLE_MORPH(q_q, CTL, &kp DQT, &kp GRAVE)
 
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_BEHAVIOR(lt_spc, hold_tap,
