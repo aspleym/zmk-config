@@ -150,12 +150,17 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
 SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
-// tap: qmark | shift + tap: excl
-SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
+// tap: / | shift + tap: ? | ctrl + shift + tap: !
+SIMPLE_MORPH(qexcl, SFT, &kp FSLH, &qmark_excl)
+SIMPLE_MORPH(qmark_excl, CTL, &kp QMARK, &kp EXCL)
 
 // tap: left/right parenthesis | shft + tap: less-than/greater-than
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
+
+// tap: '' | shift + tap: "" | ctrl + shift + tap: ``
+SIMPLE_MORPH(quote_morph, SFT, &kp APOS, &q_q)
+SIMPLE_MORPH(q_q, CTL, &kp QUOTE, &kp GRAVE)
 
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_BEHAVIOR(lt_spc, hold_tap,
@@ -171,11 +176,11 @@ ZMK_BEHAVIOR(dot_spc, macro,
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
 
-// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete
+// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete !! DISABLED
 ZMK_BEHAVIOR(bs_del, mod_morph,
     bindings = <&kp BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
-    keep-mods = <MOD_RSFT>;
+    //keep-mods = <MOD_RSFT>;
 )
 
 // tap: copy | double-tap: cut
@@ -191,15 +196,28 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
 
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp Q         &kp W         &kp F         &kp P         &kp B         &kp J         &kp L         &kp U         &kp Y         &kp SQT
+    &kp Q         &kp W         &kp F         &kp P         &kp B           &kp J         &kp L         &kp U         &kp Y         &quote_morph
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LGUI A   &hml LCTRL R  &hml LSHFT S  &hml LALT T   &kp G         &kp M         &hmr LALT N   &hmr RSHFT E  &hmr LCTRL I  &hmr LGUI O
+    &hml LGUI A   &hml LALT R  &hml LCTRL S  &hml LSHFT T   &kp G           &kp M         &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I   &hmr RGUI O
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp Z         &kp X         &kp C         &kp D         &kp V         &kp K         &kp H         &comma_morph  &dot_morph    &qexcl
+    &kp Z         &kp X         &kp C         &kp D         &kp V           &kp K         &kp H         &comma_morph  &dot_morph    &qexcl
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                         &kp N1        &lt_spc NAV 0 &lt FN RET    SMART_NUM     &smart_shft   &kp N2
-//                                     ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+                                &kp ESC       &lt NAV SPACE &lt FN TAB      &lt NAV RET    &bs_del       &smart_shft
+//                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
+
+ZMK_LAYER(nav,
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp Q         &kp W         &kp F         &kp P         &kp B           &kp J         &kp L         &kp U         &kp Y         &quote_morph
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &hml LGUI A   &hml LALT R  &hml LCTRL S  &hml LSHFT T   &kp G           &kp M         &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I   &hmr RGUI O
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &kp Z         &kp X         &kp C         &kp D         &kp V           &kp K         &kp H         &comma_morph  &dot_morph    &qexcl
+//╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
+                                &kp ESC       &lt NAV SPACE &lt FN TAB      &lt FN RET    &bs_del       &smart_shft
+//                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+)
+
 /*
 ZMK_LAYER(nav,
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
