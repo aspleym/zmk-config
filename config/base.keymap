@@ -142,14 +142,7 @@ ZMK_BEHAVIOR(uc_shift, macro,
     )
 
 // tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
-
-ZMK_BEHAVIOR(comma_morph, mod_morph,
-    bindings = <&kp COMMA>, <&comma_inner_morph>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-    keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
-//SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
 SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 
 // tap: dot | shift + tap: colon | ctrl + shift + tap: >
@@ -165,7 +158,13 @@ SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 // tap: '' | shift + tap: "" | ctrl + shift + tap: ``
-SIMPLE_MORPH(quote_morph, SFT, &kp SQT, &q_q)
+ZMK_BEHAVIOR(quote_morp, mod_morph,
+    bindings = <&kp SQT>, <&q_q>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+//SIMPLE_MORPH(quote_morph, SFT, &kp SQT, &q_q)
 SIMPLE_MORPH(q_q, CTL, &kp DQT, &kp GRAVE)
 
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
