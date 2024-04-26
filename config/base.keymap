@@ -158,7 +158,7 @@ SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 // tap: '' | shift + tap: "" | ctrl + shift + tap: ``
-ZMK_BEHAVIOR(quote_morp, mod_morph,
+ZMK_BEHAVIOR(quote_morph, mod_morph,
     bindings = <&kp SQT>, <&q_q>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
     keep-mods = <(MOD_LSFT|MOD_RSFT)>;
