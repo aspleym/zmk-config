@@ -102,7 +102,7 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 };
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
-#define SMART_NUM &smart_num NUM 0
+#define SMART_NUM &smart_num NAV 0
 ZMK_BEHAVIOR(smart_num, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <200>;
@@ -114,7 +114,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
     bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
 )
 &num_word {  // num-word, requires PR #1451
-    layers = <NUM>;
+    layers = <NAV>;
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
 };
 
