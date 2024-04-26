@@ -142,7 +142,14 @@ ZMK_BEHAVIOR(uc_shift, macro,
     )
 
 // tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+
+ZMK_BEHAVIOR(comma_morph, mod_morph,
+    bindings = <&kp COMMA>, <&comma_inner_morph>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+//SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
 SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 
 // tap: dot | shift + tap: colon | ctrl + shift + tap: >
@@ -188,13 +195,6 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
     bindings = <&kp LC(INS)>, <&kp LC(X)>;
 )
 
-ZMK_BEHAVIOR(sym_bs_del, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&bs_del>;
-)
-
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
 
@@ -209,7 +209,7 @@ ZMK_LAYER(alpha,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp Z         &kp X         &kp C         &kp D         &kp V           &kp K         &kp H         &comma_morph  &dot_morph    &qexcl
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                &kp ESC       &lt NAV SPACE &lt SYM TAB     &lt NAV RET   &bs_del       &smart_shft
+                                &kp ESC       &lt NAV SPACE &lt NAV TAB     &lt SYM RET   &bs_del       &smart_shft
 //                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -221,7 +221,7 @@ ZMK_LAYER(nav,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     ___           &kp N1        &kp N2        &kp N3        ___             ___           ___           ___           ___           ___
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                ___           ___           ___             ___           &sym_bs_del SYS 3 ___
+                                ___           ___           ___             ___           ___           ___
 //                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
