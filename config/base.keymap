@@ -13,8 +13,8 @@
 #define SYS 3
 #define UC 4
 
-#include "combos.dtsi"  // requires layer aliases
-#include "extra_keys.h"
+//#include "combos.dtsi"  // requires layer aliases
+//#include "extra_keys.h"
 
 #define XXX &none
 #define ___ &trans
