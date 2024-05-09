@@ -210,7 +210,7 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
-ZMK_COMBO(grave, &kp GRAVE,     RT3 RT4,     DEF NAV SYM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(grave, &kp GRAVE,     RT3 RT4,     DEF NAV SYM SYS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
@@ -226,7 +226,7 @@ ZMK_LAYER(alpha,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp Z         &kp X         &kp C         &kp D         &kp V           &kp K         &kp H         &comma_morph  &dot_morph    &qexcl
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                &kp ESC       &lt NAV SPACE &lt NAV TAB     &lt SYM RET   &bs_del       &smart_shft
+                                &kp ESC       &kp SPACE     &lt NAV TAB     &lt SYM RET   &bs_del       &smart_shft
 //                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
