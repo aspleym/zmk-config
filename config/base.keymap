@@ -215,6 +215,12 @@ ZMK_COMBO(grave, &kp GRAVE,     RT3 RT4,     DEF NAV SYM SYS, COMBO_TERM_SLOW, C
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
 
+ZMK_BEHAVIOR(kmac, macro,
+    wait-ms = <100>;
+    tap-ms = <5>;
+    bindings = <&kp LS(K) &kp J &kp E &kp L &kp L &kp E &kp P &kp E &kp R &kp N2 &kp N8 &kp N7>;
+)
+
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(NAV SYM, SYS)
 
@@ -260,7 +266,7 @@ ZMK_LAYER(sys,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &hml LGUI EXCL &hml LALT MINUS &hml LCTRL PLUS &hml LSHFT EQUAL &kp HASH  &kp C_VOL_DN &hmr RSHFT C_VOL_UP ___      ___           ___
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          ___           ___            ___          ___           ___               ___           ___           ___           ___           ___
+          ___           ___            ___          ___           ___               ___           ___           ___           ___           &kmac
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                       ___           ___           ___               ___           ___           ___
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
