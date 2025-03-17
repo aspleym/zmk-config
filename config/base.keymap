@@ -2,9 +2,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-//TODO: Delete this line
-#define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
-
 #include "zmk-helpers/helper.h"
 
 #define DEF 0
@@ -12,9 +9,6 @@
 #define SYM 2
 #define SYS 3
 #define NUM 4
-
-//#include "combos.dtsi"  // requires layer aliases
-//#include "extra_keys.h"
 
 #define XXX &none
 #define ___ &trans
@@ -169,6 +163,7 @@ ZMK_HOLD_TAP(lt_bs_del, bindings = <&mo>, <&bs_del>; flavor = "balanced";
   │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │
   ╰───────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────╯
           ╰─────────────╯ ╰─────────────╯ */
+
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 30
 
@@ -181,21 +176,6 @@ ZMK_BEHAVIOR(minundmorph, mod_morph,
 )
 ZMK_COMBO(grave, &kp GRAVE,     RT3 RT4,     DEF NAV SYM SYS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(minund, &minundmorph, RB3 RB4,     DEF NAV SYM SYS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-
-// misc aliases
-#define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
-
-ZMK_BEHAVIOR(kmac, macro,
-    wait-ms = <1>;
-    tap-ms = <1>;
-    bindings = <&kp LS(K) &kp J &kp E &kp L &kp L &kp E &kp P &kp E &kp R &kp N2 &kp N8 &kp N7>;
-)
- 
-ZMK_BEHAVIOR(amac, macro,
-    wait-ms = <1>;
-    tap-ms = <1>;
-    bindings = <&kp A &kp S &kp P &kp L &kp E &kp Y &kp M &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
-)
 
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(sys, NAV SYM, SYS)
@@ -238,11 +218,11 @@ ZMK_LAYER(sym,
 
 ZMK_LAYER(sys,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &bt BT_CLR_ALL &bt BT_NXT   ___           ___           ___               &kp C_PP      &kp C_PREV   &kp C_NEXT     ___           &amac
+     &bt BT_CLR_ALL &bt BT_NXT   ___           ___           ___               &kp C_PP      &kp C_PREV   &kp C_NEXT     ___           ___
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &hml LGUI EXCL &hml LALT MINUS &hml LCTRL PLUS &hml LSHFT EQUAL &kp HASH  &kp C_VOL_DN &hmr RSHFT C_VOL_UP ___      ___           ___
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     ___           ___            ___          ___           ___               ___           ___           ___           ___           &kmac
+     ___           ___            ___          ___           ___               ___           ___           ___           ___           ___
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
                                  ___           ___           ___               ___           ___           ___
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
