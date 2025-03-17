@@ -218,7 +218,7 @@ ZMK_BEHAVIOR(amac, macro,
 )
 
 /* Keymap */
-ZMK_CONDITIONAL_LAYER(NAV SYM, SYS)
+ZMK_CONDITIONAL_LAYER(sys, NAV SYM, SYS)
 
 ZMK_LAYER(alpha,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
